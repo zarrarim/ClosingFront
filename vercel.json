@@ -6,4 +6,6 @@
       "config": { "distDir": "static" }
     }
   ]
+  ,
+  "outputDirectory": "static"
 }
