@@ -85,7 +85,17 @@ export default defineConfig(({ mode }) => {
             opengl: ["three"],
           },
         },
-      },
+          },
+          // Use a function to create manual chunks so we avoid empty chunks
+          // (e.g. when 'three' is tree-shaken or imported differently).
+          manualChunks(id: string) {
+            if (id.includes('/node_modules/three') || id.includes('node_modules/three/')) {
+              return 'opengl';
+            }
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
     },
 
     server: {
