@@ -58,84 +58,98 @@
 ## Component Architecture
 
 ### 1. GameRenderer
+
 **Location**: `src/client/graphics/GameRenderer.ts`
 
 **Responsibilities**:
+
 - Canvas setup and context management
 - Layer orchestration
 - Canvas 2D rendering pipeline
 - OpenGL adapter initialization
 
 **Key Methods**:
+
 ```typescript
-initialize()              // Start game rendering
-renderGame()              // Main render loop
-tick()                    // Update tick
-getOpenGLAdapter()        // Access OpenGL
-createParticleEffect()    // Create effects
+initialize(); // Start game rendering
+renderGame(); // Main render loop
+tick(); // Update tick
+getOpenGLAdapter(); // Access OpenGL
+createParticleEffect(); // Create effects
 ```
 
 ### 2. OpenGLRendererAdapter
+
 **Location**: `src/client/graphics/opengl/OpenGLRendererAdapter.ts`
 
 **Responsibilities**:
+
 - Bridge between game and THREE.js
 - Event handling
 - Render mode management
 - Particle system orchestration
 
 **Key Methods**:
+
 ```typescript
-initialize()              // Load assets & init renderer
-setRenderMode()           // Switch between 2D/OpenGL/Hybrid
-createParticleEffect()    // Create visual effects
-getScene()                // Access THREE.js scene
-getThreeRenderer()        // Access WebGL renderer
+initialize(); // Load assets & init renderer
+setRenderMode(); // Switch between 2D/OpenGL/Hybrid
+createParticleEffect(); // Create visual effects
+getScene(); // Access THREE.js scene
+getThreeRenderer(); // Access WebGL renderer
 ```
 
 **Event Listeners**:
+
 - `unit-attack` → Creates explosion
 - `structure-destroyed` → Creates explosion + smoke
 - `explosion` → Creates custom effect
 - `game-state-update` → Updates rendering
 
 ### 3. OpenGLRenderer
+
 **Location**: `src/client/graphics/opengl/OpenGLRenderer.ts`
 
 **Responsibilities**:
+
 - THREE.js scene management
 - Mesh creation and updates
 - Camera management
 - Lighting setup
 
 **Key Methods**:
+
 ```typescript
-render()                  // Render frame
-updateGameState()         // Update scene from game state
-updateStructures()        // Position structures
-updateUnits()             // Position units
-createParticleMesh()      // Create particle geometry
+render(); // Render frame
+updateGameState(); // Update scene from game state
+updateStructures(); // Position structures
+updateUnits(); // Position units
+createParticleMesh(); // Create particle geometry
 ```
 
 ### 4. AssetManager
+
 **Location**: `src/client/graphics/opengl/AssetManager.ts`
 
 **Responsibilities**:
+
 - Texture loading from resources/
 - Asset caching
 - Parallel loading
 - Progress tracking
 
 **Key Methods**:
+
 ```typescript
-loadAllAssets()           // Load all game assets
-loadTexture()             // Load single texture
-getTexture()              // Retrieve cached texture
-getLoadingProgress()      // Get load percentage
-clearCache()              // Cleanup memory
+loadAllAssets(); // Load all game assets
+loadTexture(); // Load single texture
+getTexture(); // Retrieve cached texture
+getLoadingProgress(); // Get load percentage
+clearCache(); // Cleanup memory
 ```
 
 **Assets Loaded**:
+
 ```
 resources/
 ├── images/              (terrain, structures)
@@ -147,48 +161,56 @@ resources/
 ```
 
 ### 5. ParticleSystem
+
 **Location**: `src/client/graphics/opengl/ParticleSystem.ts`
 
 **Responsibilities**:
+
 - Particle physics simulation
 - Effect creation and management
 - Mesh generation per particle
 
 **Key Methods**:
+
 ```typescript
-emit()                    // Create particles
-update()                  // Update physics
-getGroup()                // Access THREE.js group
-reset()                   // Clear particles
+emit(); // Create particles
+update(); // Update physics
+getGroup(); // Access THREE.js group
+reset(); // Clear particles
 ```
 
 **Predefined Effects**:
+
 - `createExplosion()` - Orange particles, high velocity
 - `createSmoke()` - Gray particles, upward drift
 - `createFire()` - Yellow particles, upward movement
 - `createImpact()` - White particles, multi-direction
 
 ### 6. OpenGLTestUtils
+
 **Location**: `src/client/graphics/opengl/OpenGLTestUtils.ts`
 
 **Responsibilities**:
+
 - Testing utilities for development
 - Performance benchmarking
 - Debug console setup
 
 **Functions**:
+
 ```typescript
-testParticleEffects()     // Test all effects
-testRenderModes()         // Switch modes
-testAssetLoading()        // Monitor assets
-simulateGameEvents()      // Trigger events
-benchmarkRendering()      // Performance test
-setupTestConsole()        // Enable window.openglTest
+testParticleEffects(); // Test all effects
+testRenderModes(); // Switch modes
+testAssetLoading(); // Monitor assets
+simulateGameEvents(); // Trigger events
+benchmarkRendering(); // Performance test
+setupTestConsole(); // Enable window.openglTest
 ```
 
 ## Data Flow
 
 ### Initialization
+
 ```
 GameRenderer.initialize()
     ↓
@@ -216,6 +238,7 @@ OpenGLRenderer initialization
 ```
 
 ### Rendering Loop
+
 ```
 requestAnimationFrame()
     ↓
@@ -240,6 +263,7 @@ GameRenderer.renderGame()
 ```
 
 ### Effect Triggering
+
 ```
 Game Event
     ↓
@@ -255,6 +279,7 @@ OpenGLRendererAdapter.onStructureDestroyed()
 ## Memory Management
 
 ### Texture Caching
+
 ```
 AssetManager
     ├── Texture loading
@@ -264,6 +289,7 @@ AssetManager
 ```
 
 ### Particle Pooling
+
 ```
 ParticleSystem
     ├── Create particle instances
@@ -273,6 +299,7 @@ ParticleSystem
 ```
 
 ### Asset Cleanup
+
 ```
 GameRenderer.dispose()
     ├── Stop animation loops
@@ -285,6 +312,7 @@ GameRenderer.dispose()
 ## Event System
 
 ### Game Events
+
 ```
 eventBus.emit("unit-attack", {
     type: "explosion",
@@ -303,6 +331,7 @@ eventBus.emit("explosion", {
 ```
 
 ### OpenGL Events
+
 ```
 eventBus.on("opengl-initialized", (data) => {
     // Adapter created
@@ -324,6 +353,7 @@ eventBus.on("particle-*", (data) => {
 ## Render Modes
 
 ### Canvas 2D Mode
+
 ```
 Canvas 2D Context
     ↓
@@ -333,6 +363,7 @@ Standard performance, no acceleration
 ```
 
 ### OpenGL Mode
+
 ```
 WebGL Context
     ↓
@@ -346,6 +377,7 @@ GPU accelerated rendering
 ```
 
 ### Hybrid Mode (Default)
+
 ```
 Canvas 2D + WebGL Context
     ↓
@@ -361,6 +393,7 @@ Best visual quality + performance
 **Location**: `src/client/graphics/opengl/OpenGLConfig.ts`
 
 **Configurable**:
+
 - Rendering mode
 - Graphics quality
 - Particle settings
@@ -369,6 +402,7 @@ Best visual quality + performance
 - Development options
 
 **Runtime Updates**:
+
 ```typescript
 import { updateConfig } from "./opengl/OpenGLConfig";
 
@@ -379,6 +413,7 @@ updateConfig("graphics.enableLights", false);
 ## Browser Integration
 
 ### WebGL Detection
+
 ```
 OpenGLRendererAdapter.initialize()
     ├── Check WebGL 2.0 support
@@ -387,6 +422,7 @@ OpenGLRendererAdapter.initialize()
 ```
 
 ### Canvas Management
+
 ```
 Canvas Resize
     ├── GameRenderer.resizeCanvas()
@@ -398,6 +434,7 @@ Canvas Resize
 ## Performance Considerations
 
 ### Optimizations
+
 1. **Frustum Culling**: Only render visible objects
 2. **Texture Pooling**: Reuse loaded textures
 3. **Particle Batching**: Combine particles into groups
@@ -405,6 +442,7 @@ Canvas Resize
 5. **Shadow Caching**: Cache shadow maps
 
 ### Monitoring
+
 ```typescript
 // Performance overlay
 performanceOverlay.updateFrameMetrics(duration, layers);
@@ -446,21 +484,25 @@ src/client/graphics/
 ## Integration Points
 
 ### With GameView
+
 - Access `game.board` for game state
 - Access `game.config()` for settings
 - Access `game.ticks()` for game ticks
 
 ### With EventBus
+
 - Listen to game events
 - Emit rendering events
 - Coordinate with UI
 
 ### With InputHandler
+
 - Receive mouse/keyboard input
 - Update camera position
 - Handle zoom/pan
 
 ### With UserSettings
+
 - Read player preferences
 - Apply visual settings
 - Persist options
@@ -468,15 +510,17 @@ src/client/graphics/
 ## Future Extensibility
 
 ### Custom Shaders
+
 ```typescript
 // Add custom shader material
 const shaderMaterial = new THREE.ShaderMaterial({
-    vertexShader: customVertexShader,
-    fragmentShader: customFragmentShader
+  vertexShader: customVertexShader,
+  fragmentShader: customFragmentShader,
 });
 ```
 
 ### Additional Effects
+
 ```typescript
 // Add to ParticleEffects
 static createCustomEffect() {
@@ -487,11 +531,12 @@ static createCustomEffect() {
 ```
 
 ### 3D Models
+
 ```typescript
 // Load 3D models in future
 const loader = new GLTFLoader();
-loader.load('model.gltf', (gltf) => {
-    scene.add(gltf.scene);
+loader.load("model.gltf", (gltf) => {
+  scene.add(gltf.scene);
 });
 ```
 

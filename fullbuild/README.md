@@ -12,6 +12,7 @@ cd fullbuild
 ```
 
 Ou manuellement:
+
 ```bash
 cd fullbuild
 npm install
@@ -27,6 +28,7 @@ npm start
 ```
 
 Vous verrez:
+
 ```
 ✅ OpenFront Server running on http://localhost:3000
 ```
@@ -40,6 +42,7 @@ Ouvrez: **http://localhost:3000**
 ## 📊 Ce Qui Est Inclus
 
 ✅ **Code Source Complet**
+
 - Tous les fichiers TypeScript from `/src`
 - Logique de gameplay complète
 - Système d'alliances
@@ -47,6 +50,7 @@ Ouvrez: **http://localhost:3000**
 - Génération de cartes
 
 ✅ **Assets & Ressources**
+
 - Toutes les images (buildings, flags, etc.)
 - Sprites et animations
 - Cosmétiques (chapeaux, armes, etc.)
@@ -54,12 +58,14 @@ Ouvrez: **http://localhost:3000**
 - Polices personnalisées
 
 ✅ **Interface Utilisateur**
+
 - 100% du design original
 - Responsive (desktop/mobile)
 - Animations Pixi.js
 - Canvas rendering
 
 ✅ **Base de Données**
+
 - Mode local sans PostgreSQL
 - Sauvegarde en localStorage
 - Données persistantes
@@ -69,6 +75,7 @@ Ouvrez: **http://localhost:3000**
 ## 🎮 Features Complets
 
 ### Gameplay
+
 - ✅ Créer/rejoindre parties
 - ✅ Système de territoires complexe
 - ✅ Combat avec RNG et stratégie
@@ -79,6 +86,7 @@ Ouvrez: **http://localhost:3000**
 - ✅ Unités spéciales
 
 ### Interface
+
 - ✅ Lobby et matchmaking
 - ✅ Chat multiplayer
 - ✅ Classements
@@ -87,6 +95,7 @@ Ouvrez: **http://localhost:3000**
 - ✅ Paramètres utilisateur
 
 ### Système
+
 - ✅ Authentification (mode anonyme)
 - ✅ Sauvegarde de parties
 - ✅ Replay system
@@ -133,16 +142,19 @@ npm run dev
 ## 🌐 Configuration
 
 ### Changer le port
+
 ```bash
 PORT=8080 npm start
 ```
 
 ### Mode développement
+
 ```bash
 npm run dev
 ```
 
 Cela va:
+
 1. Rebuild à chaque modification
 2. Recharger le serveur automatiquement
 3. Afficher les erreurs TypeScript
@@ -171,6 +183,7 @@ Serveur (Node.js)
 ## 💾 Données
 
 Le jeu fonctionne **sans base de données centrale**:
+
 - ✅ Chaque partie = état local
 - ✅ Stats sauvegardées en localStorage
 - ✅ Pas de dépendance PostgreSQL
@@ -227,11 +240,13 @@ npm run build
 ## 🎯 Prochaines Étapes
 
 ### Développement
+
 1. Modifier code dans `/src`
 2. Rebuilder: `npm run build-dev`
 3. Tester: `npm start`
 
 ### Déploiement
+
 1. `npm run build` (production)
 2. Copier dossier `fullbuild/`
 3. Lancer sur serveur: `npm start`
@@ -242,18 +257,19 @@ npm run build
 
 **Problèmes courants:**
 
-| Erreur | Solution |
-|--------|----------|
-| "Build not found" | Lancez `npm run build` |
+| Erreur             | Solution                    |
+| ------------------ | --------------------------- |
+| "Build not found"  | Lancez `npm run build`      |
 | "Port 3000 in use" | Utilisez `PORT=X npm start` |
-| "Module not found" | Lancez `npm install` |
-| "WebSocket error" | Rechargez la page (Ctrl+F5) |
+| "Module not found" | Lancez `npm install`        |
+| "WebSocket error"  | Rechargez la page (Ctrl+F5) |
 
 ---
 
 ## 🎊 Résumé
 
 Vous avez maintenant:
+
 - ✅ Build complet d'OpenFront
 - ✅ Tous les assets et code source
 - ✅ Serveur Node.js ready

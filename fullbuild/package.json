@@ -12,7 +12,11 @@
     "start": "node server.js",
     "dev": "npm run build-dev && node --watch server.js"
   },
-  "keywords": ["game", "openfront", "strategy"],
+  "keywords": [
+    "game",
+    "openfront",
+    "strategy"
+  ],
   "author": "OpenFront Contributors",
   "license": "AGPL-3.0",
   "dependencies": {

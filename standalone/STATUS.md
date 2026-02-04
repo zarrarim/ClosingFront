@@ -3,13 +3,15 @@
 ## ✅ Ce Qui a Été Créé
 
 ### 📦 Dépendances Installées
+
 ```
 ✅ express@4.18.2      - Serveur HTTP
-✅ ws@8.14.2           - WebSocket temps réel  
+✅ ws@8.14.2           - WebSocket temps réel
 ✅ uuid@9.0.0          - Génération d'IDs uniques
 ```
 
 ### 📄 Fichiers Source (1,495 lignes)
+
 ```
 ✅ server.js (358 lignes)
    - Serveur Express avec middleware
@@ -42,6 +44,7 @@
 ```
 
 ### 📚 Documentation (7 fichiers)
+
 ```
 ✅ INSTALL.txt          - Guide d'installation TXT
 ✅ QUICKSTART.md        - 3 étapes rapides
@@ -53,6 +56,7 @@
 ```
 
 ### ⚙️ Configuration
+
 ```
 ✅ package.json         - Métadonnées + scripts npm
 ✅ package-lock.json    - Dépendances verrouillées
@@ -64,6 +68,7 @@
 ## 🎮 Fonctionnalités Complètes
 
 ### Mode Jeu
+
 - ✅ **Création de parties** avec code auto-généré
 - ✅ **Rejoindre parties** avec code
 - ✅ **Lobby** avec liste joueurs
@@ -77,6 +82,7 @@
 - ✅ **Synchronisation** temps réel WebSocket
 
 ### Architecture
+
 - ✅ **Serveur Node.js** avec Express
 - ✅ **WebSocket duplex** pour communication
 - ✅ **Gestion d'état** en mémoire
@@ -87,6 +93,7 @@
 - ✅ **Cleanup** automatique
 
 ### Interface
+
 - ✅ **Responsive** (desktop/tablet/mobile)
 - ✅ **Design moderne** cyan/bleu gradient
 - ✅ **Animations fluides** CSS transitions
@@ -113,50 +120,55 @@
 
 ## 📊 Métriques
 
-| Métrique | Valeur |
-|----------|--------|
-| Lignes de code | 1,495 |
-| Fichiers source | 4 |
-| Dépendances npm | 3 |
-| Dépendances totales | 70 (npm install) |
-| Taille serveur | 9.6 KB |
-| Taille client | ~40 KB (non compressé) |
-| Mémoire démarrage | ~50 MB |
-| Mémoire par joueur | ~2 KB |
-| Temps démarrage | < 2 secondes |
-| Latence WebSocket | < 100ms (local) |
-| FPS rendu | 60 FPS (canvas) |
-| Joueurs max/partie | 10 |
-| Territoires | 20x20 = 400 |
-| Parties simultanées | ~100 (1GB RAM) |
+| Métrique            | Valeur                 |
+| ------------------- | ---------------------- |
+| Lignes de code      | 1,495                  |
+| Fichiers source     | 4                      |
+| Dépendances npm     | 3                      |
+| Dépendances totales | 70 (npm install)       |
+| Taille serveur      | 9.6 KB                 |
+| Taille client       | ~40 KB (non compressé) |
+| Mémoire démarrage   | ~50 MB                 |
+| Mémoire par joueur  | ~2 KB                  |
+| Temps démarrage     | < 2 secondes           |
+| Latence WebSocket   | < 100ms (local)        |
+| FPS rendu           | 60 FPS (canvas)        |
+| Joueurs max/partie  | 10                     |
+| Territoires         | 20x20 = 400            |
+| Parties simultanées | ~100 (1GB RAM)         |
 
 ---
 
 ## 🚀 Démarrage
 
 ### Installation (1 seule fois)
+
 ```bash
 cd standalone
 npm install
 ```
 
 ### Lancer le serveur
+
 ```bash
 npm start
 ```
 
 Output attendu:
+
 ```
 🎮 OpenFront Server running on http://localhost:3000
 📡 WebSocket server ready
 ```
 
 ### Accès au jeu
+
 ```
 http://localhost:3000
 ```
 
 ### Mode développement (auto-reload)
+
 ```bash
 npm run dev
 ```
@@ -166,31 +178,40 @@ npm run dev
 ## 🛠️ Personnalisation Rapide
 
 ### Changer le port
+
 ```bash
 PORT=8080 npm start
 ```
 
 ### Changer la taille grille
+
 `server.js` ligne 25:
+
 ```javascript
 const gridSize = 20; // Changez à 30, 40, etc.
 ```
 
 ### Changer les couleurs
+
 `public/styles.css`:
+
 ```css
 /* Remplacez #00d4ff par votre couleur */
 background: linear-gradient(135deg, #YOUR_COLOR, #OTHER_COLOR);
 ```
 
 ### Changer joueurs max
+
 `server.js` ligne 80:
+
 ```javascript
 if (game.players.size >= 10) { // Changez 10
 ```
 
 ### Changer unités de départ
+
 `server.js` ligne 60:
+
 ```javascript
 startTerritory.units = 50; // Changez 50
 ```
@@ -200,22 +221,26 @@ startTerritory.units = 50; // Changez 50
 ## 📝 Fichiers de Démarrage
 
 ### Pour démarrer rapidement:
+
 1. Lisez: **INSTALL.txt** (2 min)
 2. Lisez: **QUICKSTART.md** (5 min)
 3. Lancez: `npm start`
 4. Allez à: `http://localhost:3000`
 
 ### Pour comprendre:
+
 1. Lisez: **README.md** (10 min)
 2. Lisez: **SUMMARY.md** (15 min)
 3. Explorez: `server.js` et `game.js`
 
 ### Pour les détails:
+
 1. Lisez: **DEMO.md** (20 min)
 2. Étudiez: Les diagrammes d'architecture
 3. Analysez: Le code source
 
 ### Index complet:
+
 - **INDEX.md** - Navigation pour tous les fichiers
 
 ---
@@ -274,6 +299,7 @@ npm --version
 ## 🎊 Résumé Final
 
 ### ✅ Créé et Fonctionne
+
 - Serveur Node.js complet avec Express
 - Client web HTML/CSS/JS moderne
 - WebSocket temps réel
@@ -284,6 +310,7 @@ npm --version
 - Prêt à jouer!
 
 ### ✅ Caractéristiques
+
 - Multiplayer 1-10 joueurs
 - Grille 20x20 territoires
 - Combat aléatoire
@@ -294,6 +321,7 @@ npm --version
 - GRATUIT
 
 ### ✅ Documentation
+
 - Guide d'installation
 - Quick start 3 étapes
 - Manuel complet

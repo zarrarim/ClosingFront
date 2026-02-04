@@ -241,13 +241,13 @@ Client                    WebSocket                   Server
 
 ## 📊 Statistiques de Code
 
-| Fichier | Lignes | Rôle |
-|---------|--------|------|
-| server.js | 595 | Serveur + Logique jeu |
-| index.html | 200 | UI + 3 écrans |
-| styles.css | 550 | Design responsive |
-| game.js | 450 | Client logic + Canvas |
-| **Total** | **1,795** | **Produit complet** |
+| Fichier    | Lignes    | Rôle                  |
+| ---------- | --------- | --------------------- |
+| server.js  | 595       | Serveur + Logique jeu |
+| index.html | 200       | UI + 3 écrans         |
+| styles.css | 550       | Design responsive     |
+| game.js    | 450       | Client logic + Canvas |
+| **Total**  | **1,795** | **Produit complet**   |
 
 ### Lignes par Feature
 
@@ -321,20 +321,20 @@ Alice:                    | Bob:
 
 ```javascript
 function attackTerritory(playerId, fromId, toId) {
-  const fromTerritory = territories.find(t => t.id === fromId);
-  const toTerritory = territories.find(t => t.id === toId);
-  
+  const fromTerritory = territories.find((t) => t.id === fromId);
+  const toTerritory = territories.find((t) => t.id === toId);
+
   // Vérifications
   if (fromTerritory.units < 10) return false; // Assez d'unités?
-  if (!areAdjacent(from, to)) return false;   // Adjacent?
-  
+  if (!areAdjacent(from, to)) return false; // Adjacent?
+
   // Combat
   const attackForce = fromTerritory.units * 0.7;
   const defenseForce = toTerritory.units || 0;
-  
-  const attackerWins = 
+
+  const attackerWins =
     Math.random() * (attackForce + defenseForce) < attackForce;
-  
+
   // Résolution
   if (attackerWins) {
     toTerritory.owner = playerId;
@@ -342,7 +342,7 @@ function attackTerritory(playerId, fromId, toId) {
   } else {
     toTerritory.units = Math.max(0, defenseForce - attackForce * 0.3);
   }
-  
+
   fromTerritory.units -= attackForce;
   return true;
 }
@@ -394,6 +394,7 @@ ws.onmessage = (event) => {
 ## 🎨 Design Highlights
 
 ### Couleur Scheme
+
 ```css
 Bleu principal:   #00d4ff (Cyan)
 Bleu secondary:   #0099ff
@@ -459,39 +460,43 @@ npm start
 ## 🎯 Résumé: Ce Qui a Été Créé
 
 ✅ **Serveur Node.js complet** (595 lignes)
-  - Express pour servir l'app
-  - WebSocket pour temps réel
-  - Logique de jeu complète
-  - Gestion de 10 joueurs max
+
+- Express pour servir l'app
+- WebSocket pour temps réel
+- Logique de jeu complète
+- Gestion de 10 joueurs max
 
 ✅ **Interface web moderne** (1,200 lignes HTML/CSS)
-  - 3 écrans (login, lobby, jeu)
-  - Design cyan/bleu gradient
-  - Responsive (desktop à mobile)
-  - Canvas HTML5 20x20
+
+- 3 écrans (login, lobby, jeu)
+- Design cyan/bleu gradient
+- Responsive (desktop à mobile)
+- Canvas HTML5 20x20
 
 ✅ **Gameplay fonctionnel** (450 lignes JS)
-  - Création/rejointe parties
-  - Combat et capture
-  - Générations ressources
-  - Classement en direct
+
+- Création/rejointe parties
+- Combat et capture
+- Générations ressources
+- Classement en direct
 
 ✅ **Documentation complète**
-  - README (fonctionnalités + architecture)
-  - QUICKSTART (3 étapes pour jouer)
-  - SUMMARY (résumé technique)
-  - INSTALL (guide simple)
-  - DEMO (ce document!)
+
+- README (fonctionnalités + architecture)
+- QUICKSTART (3 étapes pour jouer)
+- SUMMARY (résumé technique)
+- INSTALL (guide simple)
+- DEMO (ce document!)
 
 ✅ **GRATUIT et sans authentification**
-  - Pas de compte
-  - Pas de BDD
-  - Mode anonyme complet
-  - Zéro données personnelles
+
+- Pas de compte
+- Pas de BDD
+- Mode anonyme complet
+- Zéro données personnelles
 
 ---
 
 **Vous avez maintenant une version OpenFront fonctionnelle et complète!** 🎮⚡
 
 Pour jouer: `npm start` puis `http://localhost:3000`
-

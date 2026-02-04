@@ -20,18 +20,21 @@ node server-fullbuild.mjs
 ✅ **Loads automatically** on game start  
 ✅ **Uses hybrid rendering** by default  
 ✅ **Loads all assets** from resources/  
-✅ **Creates particle effects** automatically  
+✅ **Creates particle effects** automatically
 
 ## Enable/Disable
 
 ### Automatic (Default)
+
 OpenGL initializes automatically in HYBRID mode:
+
 ```typescript
 // In GameRenderer.initialize()
 // OpenGL loads and runs in background
 ```
 
 ### Manual Control
+
 ```typescript
 const gameRenderer = /* get renderer */;
 const adapter = gameRenderer.getOpenGLAdapter();
@@ -39,7 +42,7 @@ const adapter = gameRenderer.getOpenGLAdapter();
 if (adapter?.isOpenGLAvailable()) {
   // Switch render mode
   adapter.setRenderMode(RenderMode.OPENGL);
-  
+
   // Create effects
   adapter.createParticleEffect("explosion", { x: 100, y: 200 });
 }
@@ -48,6 +51,7 @@ if (adapter?.isOpenGLAvailable()) {
 ## Using Particle Effects
 
 ### Automatic (Event-driven)
+
 ```typescript
 // Game events automatically trigger effects
 eventBus.emit("unit-attack", { position: { x, y } });
@@ -55,6 +59,7 @@ eventBus.emit("structure-destroyed", { position: { x, y } });
 ```
 
 ### Manual
+
 ```typescript
 gameRenderer.createParticleEffect("explosion", { x: 100, y: 200 }, 1.5);
 gameRenderer.createParticleEffect("smoke", { x: 100, y: 200 });
@@ -93,22 +98,25 @@ In `OpenGLRendererAdapter.initialize()`:
 
 ```typescript
 const config: OpenGLRendererConfig = {
-  antialiasing: true,      // MSAA enabled
-  shadowMap: true,         // Shadows enabled
-  enableLights: true,      // Dynamic lights
-  targetFPS: 60,          // Target 60 FPS
+  antialiasing: true, // MSAA enabled
+  shadowMap: true, // Shadows enabled
+  enableLights: true, // Dynamic lights
+  targetFPS: 60, // Target 60 FPS
 };
 ```
 
 ## Render Modes
 
 ### Canvas 2D (Fallback)
+
 Pure 2D canvas rendering, no 3D effects
 
 ### OpenGL (Full 3D)
+
 Full WebGL 2.0 rendering, 3D with effects
 
 ### Hybrid (Default)
+
 OpenGL background + Canvas 2D UI overlay
 
 ## Files Location
@@ -144,6 +152,7 @@ resources/
 ## Performance Tips
 
 1. **Lower-end devices**
+
    ```typescript
    adapter.setRenderMode(RenderMode.CANVAS_2D);
    ```
@@ -153,6 +162,7 @@ resources/
    - Lower `emissionRate`
 
 3. **Disable shadows**
+
    ```typescript
    const config = { shadowMap: false };
    ```
@@ -166,22 +176,26 @@ resources/
 ## Troubleshooting
 
 ### "OpenGL renderer not available"
+
 - Browser doesn't support WebGL 2.0
 - Falls back to Canvas 2D automatically
 - Game still works fine
 
 ### Assets not loading
+
 - Check `resources/` directory exists
 - Check browser Network tab for 404s
 - Wait for `opengl-ready` event
 
 ### Low FPS
+
 - Reduce particle count
 - Disable shadows
 - Switch to Canvas 2D mode
 - Check browser performance
 
 ### Effects not showing
+
 - Verify event emission
 - Check event names match
 - Check particle effect type
@@ -206,4 +220,4 @@ resources/
 **Status**: ✅ Ready to use  
 **No configuration needed**: ✅  
 **All assets included**: ✅  
-**Fully compatible**: ✅  
+**Fully compatible**: ✅

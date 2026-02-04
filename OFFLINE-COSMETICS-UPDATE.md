@@ -7,9 +7,11 @@
 ## ✨ What's New
 
 ### 🎁 All Cosmetics Unlocked in Offline Mode
+
 When playing offline, **ALL cosmetics are automatically unlocked and free**:
 
 ✅ **Unit Skins** (5 total)
+
 - Royal Knight (Epic)
 - Shadow Archer (Rare)
 - Archmage (Legendary)
@@ -17,26 +19,31 @@ When playing offline, **ALL cosmetics are automatically unlocked and free**:
 - Undead Warrior (Epic)
 
 ✅ **Structure Skins** (3 total)
+
 - Royal Castle (Epic)
 - Dark Tower (Rare)
 - Iron Fortress (Legendary)
 
 ✅ **Flags** (4 total)
+
 - Red Kingdom (Common)
 - Blue Empire (Common)
 - Golden Dynasty (Rare)
 - Dragon Banner (Epic)
 
 ✅ **Badges** (2 total)
+
 - Victory Badge
 - Legendary Badge
 
 ✅ **Visual Effects** (3 total)
+
 - Fire Aura (Rare)
 - Ice Aura (Rare)
 - Holy Light (Epic)
 
 ✅ **Emotes** (3 total)
+
 - Laugh (Common)
 - Victory (Uncommon)
 - Dance (Rare)
@@ -46,9 +53,11 @@ When playing offline, **ALL cosmetics are automatically unlocked and free**:
 ## 🚩 Custom Flags System (NEW!)
 
 ### Create Your Own Flags
+
 Complete flag customization system with:
 
 #### ✨ Features
+
 - **3-Color System**: Primary, Secondary, Accent
 - **5 Pattern Styles**:
   - Solid (one color)
@@ -60,6 +69,7 @@ Complete flag customization system with:
 - **Unlimited Creation**: Create as many as you want
 
 #### 🎨 10+ Preset Custom Flags
+
 Ready-to-use flag templates:
 
 ```
@@ -76,6 +86,7 @@ Ready-to-use flag templates:
 ```
 
 #### 🎮 How to Use
+
 1. Open **🚩 Custom Flags Panel**
 2. Select colors (or pick preset)
 3. Choose pattern
@@ -88,6 +99,7 @@ Ready-to-use flag templates:
 ## 📂 New Files Created
 
 ### Code Files
+
 - `src/client/offline-game/CustomFlagUI.ts` (330 lines)
   - Complete custom flag UI system
   - Canvas-based flag preview
@@ -95,6 +107,7 @@ Ready-to-use flag templates:
   - Flag management
 
 ### Updated Files
+
 - `src/client/offline-game/CosmeticsManager.ts`
   - Added `CustomFlag` interface
   - Offline mode support
@@ -111,6 +124,7 @@ Ready-to-use flag templates:
   - CustomFlag type exported
 
 ### Documentation Files
+
 - `CUSTOM-FLAGS-GUIDE.md` (Complete guide)
 - `OFFLINE-COSMETICS-UPDATE.md` (This file)
 
@@ -119,6 +133,7 @@ Ready-to-use flag templates:
 ## 🔧 Technical Implementation
 
 ### Offline Mode Initialization
+
 ```typescript
 // Automatically enabled in offline game
 cosmeticsManager.setOfflineMode(true);
@@ -129,6 +144,7 @@ cosmeticsManager.setOfflineMode(true);
 ```
 
 ### Custom Flag Creation
+
 ```typescript
 cosmeticsManager.createCustomFlag(
   playerId,
@@ -136,13 +152,14 @@ cosmeticsManager.createCustomFlag(
   {
     primary: "#FF0000",
     secondary: "#FFFFFF",
-    accent: "#0000FF"
+    accent: "#0000FF",
   },
-  "stripes"
+  "stripes",
 );
 ```
 
 ### Flag Customization
+
 ```typescript
 // Get player's custom flags
 const customFlags = cosmeticsManager.getPlayerCustomFlags(playerId);
@@ -158,34 +175,37 @@ const equipped = cosmeticsManager.getEquippedCustomFlag(playerId);
 
 ## 📊 Statistics
 
-| Metric | Value |
-|--------|-------|
-| Cosmetic Items | 20+ |
-| Unit Skins | 5 |
-| Structure Skins | 3 |
-| Flags | 4 |
-| Custom Flag Presets | 10+ |
-| Pattern Types | 5 |
-| Colors per Flag | 3 |
-| Code Lines Added | 450+ |
-| Compilation Errors | 0 ✅ |
+| Metric              | Value |
+| ------------------- | ----- |
+| Cosmetic Items      | 20+   |
+| Unit Skins          | 5     |
+| Structure Skins     | 3     |
+| Flags               | 4     |
+| Custom Flag Presets | 10+   |
+| Pattern Types       | 5     |
+| Colors per Flag     | 3     |
+| Code Lines Added    | 450+  |
+| Compilation Errors  | 0 ✅  |
 
 ---
 
 ## 🎮 How to Use in Offline Game
 
 ### Step 1: Launch Game
+
 ```bash
 npm run dev
 # Go to http://localhost:9001/offline-game.html
 ```
 
 ### Step 2: Access Cosmetics
+
 - All cosmetics automatically unlocked
 - Browse via cosmetics panel
 - Equip any skin instantly
 
 ### Step 3: Create Custom Flags
+
 1. Open **🚩 Custom Flags Panel**
 2. Use color picker to select colors
 3. Choose pattern from dropdown
@@ -193,6 +213,7 @@ npm run dev
 5. Click **Create**
 
 ### Step 4: Equip Your Flag
+
 - Click **Equip** on any flag
 - Button shows **✓ Equipped** when active
 - Your kingdom now uses your custom flag
@@ -217,6 +238,7 @@ npm run dev
 ## 🚀 Features Ready
 
 ### ✨ Offline Mode
+
 - **100% Free**: No paid cosmetics
 - **Unlimited**: All items unlocked
 - **No Login**: No account needed
@@ -224,6 +246,7 @@ npm run dev
 - **Save Progress**: LocalStorage auto-save
 
 ### 🎨 Customization
+
 - **Create Flags**: Unlimited custom flags
 - **3-Color System**: Full control
 - **5 Patterns**: Multiple styles
@@ -231,6 +254,7 @@ npm run dev
 - **Instant Equip**: Apply immediately
 
 ### 🎯 Gameplay
+
 - **Beautiful UI**: Dark theme (modern design)
 - **Full Controls**: Keyboard & mouse
 - **AI Opponents**: 4 strategic AI
@@ -272,6 +296,7 @@ npm run dev
 ## 📚 Documentation
 
 For detailed guide, see:
+
 - **User Guide**: `CUSTOM-FLAGS-GUIDE.md`
 - **Offline Game**: `OFFLINE-GAME-README.md`
 - **Implementation**: `OFFLINE-GAME-SUMMARY.md`
@@ -282,6 +307,7 @@ For detailed guide, see:
 ## 🎉 Summary
 
 You now have:
+
 - ✅ **All 20+ cosmetics** - Unlocked & Free
 - ✅ **Custom flag system** - Create unlimited flags
 - ✅ **10+ flag presets** - Ready-to-use templates

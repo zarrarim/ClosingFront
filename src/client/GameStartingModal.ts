@@ -24,9 +24,7 @@ export class GameStartingModal extends LitElement {
           ? "opacity-100 visible -translate-y-1/2"
           : "opacity-0 invisible -translate-y-[48%]"}"
       >
-        <div class="text-xl mt-5 mb-2.5 px-0">
-          © OpenFront and Contributors
-        </div>
+        <div class="text-xl mt-5 mb-2.5 px-0">© OpenFront and Contributors</div>
         <a
           href="https://github.com/openfrontio/OpenFrontIO/blob/main/CREDITS.md"
           target="_blank"

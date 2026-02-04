@@ -38,8 +38,8 @@ fi
 echo ""
 echo -e "${BLUE}[4/5] Checking documentation...${NC}"
 DOCS=0
-[ -f "OFFLINE-GAME-README.md" ] && DOCS=$((DOCS+1)) && echo -e "${GREEN}✓ OFFLINE-GAME-README.md${NC}"
-[ -f "OFFLINE-GAME-SUMMARY.md" ] && DOCS=$((DOCS+1)) && echo -e "${GREEN}✓ OFFLINE-GAME-SUMMARY.md${NC}"
+[ -f "OFFLINE-GAME-README.md" ] && DOCS=$((DOCS + 1)) && echo -e "${GREEN}✓ OFFLINE-GAME-README.md${NC}"
+[ -f "OFFLINE-GAME-SUMMARY.md" ] && DOCS=$((DOCS + 1)) && echo -e "${GREEN}✓ OFFLINE-GAME-SUMMARY.md${NC}"
 
 echo ""
 echo -e "${BLUE}[5/5] Listing all offline game components...${NC}"

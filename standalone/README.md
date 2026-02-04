@@ -5,15 +5,18 @@ Une version fonctionnelle et simplifiée d'OpenFront avec Node.js et interface w
 ## 🚀 Installation et Démarrage
 
 ### Prérequis
+
 - Node.js v16+ avec npm
 
 ### Installation
+
 ```bash
 cd standalone
 npm install
 ```
 
 ### Lancer le serveur
+
 ```bash
 npm start
 ```
@@ -21,6 +24,7 @@ npm start
 Puis ouvrez votre navigateur sur `http://localhost:3000`
 
 ### Mode développement (avec auto-reload)
+
 ```bash
 npm run dev
 ```
@@ -28,6 +32,7 @@ npm run dev
 ## 🎮 Fonctionnalités
 
 ### Gameplay
+
 - ✅ **Création de parties** - Créez une partie et partagez le code
 - ✅ **Multiplayer** - Jusqu'à 10 joueurs par partie
 - ✅ **Stratégie temps réel** - Capturez et défendez des territoires
@@ -36,12 +41,14 @@ npm run dev
 - ✅ **Classement** - Voyez qui domine la carte
 
 ### Interface
+
 - 🎨 Design moderne avec gradient bleu
 - 📱 Responsive (desktop et tablette)
 - ⚡ Interactions fluides
 - 🎯 Canvas optimisé pour les performances
 
 ### Sans compte / Authentification
+
 - ✅ Mode anonyme complet
 - ✅ Pas de création de compte
 - ✅ Pas de sauvegarde persistante
@@ -50,22 +57,26 @@ npm run dev
 ## 🎮 Comment Jouer
 
 ### 1. Créer une Partie
+
 - Entrez votre nom
 - Cliquez "Créer une Partie"
 - Partagez le code avec vos amis
 
 ### 2. Rejoindre une Partie
+
 - Entrez votre nom
 - Cliquez "Rejoindre une Partie"
 - Entrez le code de la partie
 
 ### 3. Pendant la Partie
+
 - **Cliquez sur un territoire** pour le sélectionner
 - **Améliorer** (+20 unités pour améliorer) si c'est le vôtre
 - **Attaquer** un territoire adjacent occupé par un rival
 - **Capturer** un territoire libre adjacent
 
 ### 4. Objectif
+
 - Conquérir le maximum de territoires
 - Défendre vos positions
 - Dominer la carte!
@@ -83,6 +94,7 @@ standalone/
 ```
 
 ### Serveur (Node.js)
+
 - Express pour servir les fichiers statiques
 - WebSocket pour la communication temps réel
 - Gestion d'état de jeu
@@ -90,6 +102,7 @@ standalone/
 - Synchronisation des territoires
 
 ### Client (HTML/CSS/JS)
+
 - Canvas HTML5 pour le rendu de la carte
 - WebSocket pour la communication bidirectionnelle
 - UI responsive et moderne
@@ -98,19 +111,25 @@ standalone/
 ## 🔧 Personnalisation
 
 ### Changer la taille de la grille
+
 Dans `server.js`, fonction `initializeTerritories()`:
+
 ```javascript
 const gridSize = 20; // Changez cette valeur
 ```
 
 ### Changer le nombre de joueurs max
+
 Dans `server.js`, fonction `addPlayer()`:
+
 ```javascript
 if (game.players.size >= 10) { // Changez 10
 ```
 
 ### Changer les couleurs
+
 Dans `public/styles.css`:
+
 ```css
 background: linear-gradient(135deg, #00d4ff, #0099ff); /* Bleu par défaut */
 ```

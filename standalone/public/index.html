@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -15,23 +15,45 @@
           <p class="subtitle">Jeu de Stratégie Temps Réel</p>
 
           <div class="login-form">
-            <input type="text" id="playerNameInput" placeholder="Votre nom" class="input-field" />
+            <input
+              type="text"
+              id="playerNameInput"
+              placeholder="Votre nom"
+              class="input-field"
+            />
 
             <div class="button-group">
-              <button id="createGameBtn" class="btn btn-primary">Créer une Partie</button>
-              <button id="joinGameBtn" class="btn btn-secondary">Rejoindre une Partie</button>
+              <button id="createGameBtn" class="btn btn-primary">
+                Créer une Partie
+              </button>
+              <button id="joinGameBtn" class="btn btn-secondary">
+                Rejoindre une Partie
+              </button>
             </div>
 
             <div id="joinGameForm" class="hidden">
-              <input type="text" id="gameCodeInput" placeholder="Code de la partie" class="input-field" />
-              <button id="confirmJoinBtn" class="btn btn-primary">Rejoindre</button>
+              <input
+                type="text"
+                id="gameCodeInput"
+                placeholder="Code de la partie"
+                class="input-field"
+              />
+              <button id="confirmJoinBtn" class="btn btn-primary">
+                Rejoindre
+              </button>
               <button id="cancelJoinBtn" class="btn btn-cancel">Annuler</button>
             </div>
           </div>
 
           <div class="info-box">
-            <p><strong>⚡ Créez une partie</strong> ou rejoignez une existante avec un code</p>
-            <p><strong>📊 Stratégie:</strong> Capturez des territoires et formez des alliances</p>
+            <p>
+              <strong>⚡ Créez une partie</strong> ou rejoignez une existante
+              avec un code
+            </p>
+            <p>
+              <strong>📊 Stratégie:</strong> Capturez des territoires et formez
+              des alliances
+            </p>
             <p><strong>🏆 Objectif:</strong> Dominez la carte!</p>
           </div>
         </div>
@@ -54,13 +76,20 @@
           </div>
 
           <div class="lobby-actions">
-            <button id="startGameBtn" class="btn btn-primary" disabled>Démarrer la Partie</button>
+            <button id="startGameBtn" class="btn btn-primary" disabled>
+              Démarrer la Partie
+            </button>
             <button id="leaveLobbyBtn" class="btn btn-cancel">Quitter</button>
           </div>
 
           <div class="info-box">
-            <p>Attendez que d'autres joueurs rejoignent... (Minimum 1 joueur)</p>
-            <p>Le créateur de la partie peut la démarrer dès qu'il y a au moins 1 joueur.</p>
+            <p>
+              Attendez que d'autres joueurs rejoignent... (Minimum 1 joueur)
+            </p>
+            <p>
+              Le créateur de la partie peut la démarrer dès qu'il y a au moins 1
+              joueur.
+            </p>
           </div>
         </div>
       </div>
@@ -114,7 +143,9 @@
             <div class="game-sidebar">
               <div class="sidebar-section">
                 <h3>⚔️ Contrôles</h3>
-                <p class="text-small">Cliquez sur un territoire pour le sélectionner</p>
+                <p class="text-small">
+                  Cliquez sur un territoire pour le sélectionner
+                </p>
               </div>
 
               <div class="sidebar-section">
@@ -124,10 +155,15 @@
 
               <div class="sidebar-section">
                 <h3>ℹ️ Info</h3>
-                <p class="text-small">Générez des unités automatiquement. Attaquez les territoires adjacents.</p>
+                <p class="text-small">
+                  Générez des unités automatiquement. Attaquez les territoires
+                  adjacents.
+                </p>
               </div>
 
-              <button id="quitGameBtn" class="btn btn-cancel full-width">Quitter le Jeu</button>
+              <button id="quitGameBtn" class="btn btn-cancel full-width">
+                Quitter le Jeu
+              </button>
             </div>
           </div>
         </div>

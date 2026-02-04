@@ -3,6 +3,7 @@
 ## ✨ Ce Qu'Vous Avez
 
 **Un clone COMPLET et FONCTIONNEL d'OpenFront** utilisant:
+
 - ✅ **Build Vite** - Compilation TypeScript optimisée
 - ✅ **Tous les assets** - Graphics, cosmétiques, maps, sons
 - ✅ **Code source original** - src/client + src/core + src/server
@@ -13,22 +14,26 @@
 ## 🚀 Démarrage Rapide
 
 ### 1️⃣ Vérifier les prérequis
+
 ```bash
-node --version  # v16+
-npm --version   # v10+
+node --version # v16+
+npm --version  # v10+
 ```
 
 ### 2️⃣ Installer les dépendances (une seule fois)
+
 ```bash
 npm install
 ```
 
 ### 3️⃣ Construire le projet (Vite)
+
 ```bash
 npm run build-prod
 ```
 
 Cela génère le dossier `static/` avec:
+
 - `index.html` - Interface compilée
 - `assets/` - JavaScript, CSS, images minifiés
 - `cosmetics/` - Tous les cosmétiques gratuits
@@ -38,17 +43,21 @@ Cela génère le dossier `static/` avec:
 - Et tous les autres assets!
 
 ### 4️⃣ Lancer le serveur
+
 ```bash
 node server-fullbuild.mjs
 ```
 
 Ou lancez directement:
+
 ```bash
 npm run build-prod && node server-fullbuild.mjs
 ```
 
 ### 5️⃣ Accédez au jeu
+
 Ouvrez votre navigateur:
+
 ```
 http://localhost:3000
 ```
@@ -86,6 +95,7 @@ OpenFront (Répertoire racine)
 ## 🎮 Fonctionnalités Complètes
 
 ### Gameplay
+
 - ✅ Mode solo et multijoueur
 - ✅ Système de lobby complet
 - ✅ Matchmaking et parties publiques
@@ -95,6 +105,7 @@ OpenFront (Répertoire racine)
 - ✅ Classements et statistiques
 
 ### Cosmétiques
+
 - ✅ **TOUS GRATUITS** - Pas de paywall
 - ✅ Skins de nations personnalisés
 - ✅ Animations spéciales
@@ -102,6 +113,7 @@ OpenFront (Répertoire racine)
 - ✅ Personnalisation complète
 
 ### Interfaces
+
 - ✅ Lobby avec chat
 - ✅ Paramètres utilisateur
 - ✅ Aide et tutoriels
@@ -110,6 +122,7 @@ OpenFront (Répertoire racine)
 - ✅ Traductions complètes (FR, EN, etc.)
 
 ### Cartes
+
 - ✅ 50+ cartes disponibles
 - ✅ Cartes personnalisées
 - ✅ Terrains variés
@@ -143,18 +156,23 @@ npm run start:server
 ## 🎯 Pour Développeurs
 
 ### Éditer le code
+
 Tous les fichiers source sont dans `src/`:
+
 - `src/client/` - Interface web (Lit Web Components)
 - `src/core/` - Logique jeu (Game, Stats, Units, etc.)
 - `src/server/` - Serveur original (ignoré pour ce build)
 
 ### Modifier après le build
+
 1. Éditer les fichiers dans `src/`
 2. Relancer `npm run build-prod`
 3. Redémarrer le serveur `node server-fullbuild.mjs`
 
 ### Configuration personnalisée
+
 Modifiez `vite.config.ts` pour:
+
 - Changer le port
 - Ajouter des plugins
 - Optimiser les chunks
@@ -195,12 +213,13 @@ DEBUG=* node server-fullbuild.mjs
 ## ⚙️ Configuration Vite
 
 Dans `vite.config.ts`:
+
 ```typescript
 export default defineConfig(({ mode }) => {
   return {
     root: "./",
     base: "/",
-    publicDir: "resources",  // Copie tous les assets
+    publicDir: "resources", // Copie tous les assets
     // ... plus de configuration
   };
 });
@@ -216,40 +235,45 @@ export default defineConfig(({ mode }) => {
 
 ## 📊 Statistiques du Build
 
-| Métrique | Valeur |
-|----------|--------|
-| Modules TypeScript | 2,072 |
+| Métrique              | Valeur  |
+| --------------------- | ------- |
+| Modules TypeScript    | 2,072   |
 | Fichiers CSS compilés | ~500 KB |
-| JavaScript compilé | ~2 MB |
-| Taille HTML | 12 KB |
-| Assets graphiques | ~5 MB |
-| Temps de compilation | ~30 sec |
-| Taille finale (gzip) | ~3-4 MB |
+| JavaScript compilé    | ~2 MB   |
+| Taille HTML           | 12 KB   |
+| Assets graphiques     | ~5 MB   |
+| Temps de compilation  | ~30 sec |
+| Taille finale (gzip)  | ~3-4 MB |
 
 ## 🐛 Dépannage
 
 ### "static/" n'existe pas
+
 ```bash
 npm run build-prod
 ```
 
 ### Port 3000 occupé
+
 ```bash
 PORT=8080 node server-fullbuild.mjs
 ```
 
 ### Module not found error
+
 ```bash
 npm install
 npm run build-prod
 ```
 
 ### WebSocket erreur
+
 Vérifiez que le serveur est lancé et accessible
 
 ## 🎊 Résumé
 
 ✅ **Vous avez maintenant:**
+
 - Code source complet d'OpenFront compilé
 - Tous les assets intégrés
 - Serveur Node.js prêt à fonctionner
@@ -258,6 +282,7 @@ Vérifiez que le serveur est lancé et accessible
 - Gameplay 100% fonctionnel
 
 **Pour démarrer:**
+
 ```bash
 npm run build-prod && node server-fullbuild.mjs
 ```

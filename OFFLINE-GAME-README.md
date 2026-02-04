@@ -7,6 +7,7 @@
 ## 🎮 Features
 
 ### Complete Game Engine
+
 - **Full turn-based gameplay** with real-time animation
 - **100% offline** - works without internet connection
 - **Game state persistence** - save and load games
@@ -16,6 +17,7 @@
 - **Resource economy** - gold, food, wood, population
 
 ### All Cosmetics Integrated
+
 - **Unit skins**: Knights, Archers, Mages, Dragons, Skeletons
 - **Structure skins**: Castles, Towers, Fortresses
 - **Flags**: National flags from all countries with proper colors
@@ -25,6 +27,7 @@
 - **Full cosmetics manager** with unlock system
 
 ### Complete Asset Management
+
 - **10+ Country flags** with accurate colors and symbols
 - **8+ Map variations**: World Map, Archipelago, Desert, Mountains, etc.
 - **9 Terrain types**: Grassland, Forest, Mountain, Desert, Water, Swamp, Tundra, Beach, Oasis
@@ -33,6 +36,7 @@
 - **Resource loading** from all assets in resources/ directory
 
 ### Beautiful, Clean UI
+
 - **Modern dark theme** with cyan accents
 - **Responsive layout** for all screen sizes
 - **Real-time HUD** with resource tracking
@@ -46,6 +50,7 @@
 - **Notification system** for game events
 
 ### Full Core Integration
+
 - All **core/ game systems** integrated
 - **EventBus** for event-driven architecture
 - **GameView** for state management
@@ -58,6 +63,7 @@
 ## 🚀 Quick Start
 
 ### Launch the Game
+
 ```bash
 # Navigate to the project
 cd /workspaces/OpenFrontIO
@@ -70,6 +76,7 @@ http://localhost:5173/offline-game.html
 ```
 
 ### In-Game Controls
+
 - **ESC or P** - Open/Close menu
 - **CTRL+S** - Save game
 - **Spacebar** - Center on capital
@@ -77,18 +84,19 @@ http://localhost:5173/offline-game.html
 - **Right Click** - Move units
 
 ### Console Commands
+
 ```javascript
 // Toggle pause
-game.togglePause()
+game.togglePause();
 
 // Save progress
-game.save()
+game.save();
 
 // Load progress
-game.load()
+game.load();
 
 // Get game reference
-const launcher = window.game
+const launcher = window.game;
 ```
 
 ## 📁 Project Structure
@@ -108,6 +116,7 @@ offline-game.html              # Game entry point
 ## 🎯 Game Systems
 
 ### 1. Game Engine
+
 - **Turn-based logic** with real-time animation
 - **Unit movement** with pathfinding
 - **Combat system** with damage calculation
@@ -117,69 +126,74 @@ offline-game.html              # Game entry point
 - **Game state updates** at 60 FPS
 
 ### 2. Cosmetics Manager
+
 ```typescript
 // Unlock a cosmetic
-cosmeticsManager.unlockCosmetic("human", "unit_skin_dragon")
+cosmeticsManager.unlockCosmetic("human", "unit_skin_dragon");
 
 // Equip a cosmetic
-cosmeticsManager.equipCosmetic("human", "unit_skin_dragon", "unitSkin")
+cosmeticsManager.equipCosmetic("human", "unit_skin_dragon", "unitSkin");
 
 // Get player cosmetics
-const cosmetics = cosmeticsManager.getPlayerCosmetics("human")
+const cosmetics = cosmeticsManager.getPlayerCosmetics("human");
 ```
 
 ### 3. Assets Manager
+
 ```typescript
 // Get all maps
-const maps = assetsManager.getAllMaps()
+const maps = assetsManager.getAllMaps();
 
 // Get country info
-const france = assetsManager.getCountry("FR")
+const france = assetsManager.getCountry("FR");
 
 // Load flag image
-const flagImg = await assetsManager.getCountryFlagImage("US")
+const flagImg = await assetsManager.getCountryFlagImage("US");
 
 // Preload all assets
-await assetsManager.preloadAll()
+await assetsManager.preloadAll();
 ```
 
 ### 4. UI Manager
+
 ```typescript
 // Show notification
-gameUIManager.showNotification("Game Started!", "success")
+gameUIManager.showNotification("Game Started!", "success");
 
 // Update resources
-gameUIManager.updateResources({ gold: 5000, food: 2000 })
+gameUIManager.updateResources({ gold: 5000, food: 2000 });
 
 // Toggle menu
-gameUIManager.toggleMenu()
+gameUIManager.toggleMenu();
 
 // Show loading
-gameUIManager.showLoading(50, "Loading...")
+gameUIManager.showLoading(50, "Loading...");
 ```
 
 ### 5. Game Launcher
+
 ```typescript
 // Initialize game with config
 const launcher = await initializeOfflineGame({
   difficulty: "hard",
   aiPlayers: 5,
-  gameSpeed: 2
-})
+  gameSpeed: 2,
+});
 
 // Save game
-launcher.saveGame()
+launcher.saveGame();
 
 // Load game
-launcher.loadGame()
+launcher.loadGame();
 
 // Exit game
-launcher.exitGame()
+launcher.exitGame();
 ```
 
 ## 🎨 Features Highlight
 
 ### Beautiful Dark Theme
+
 - **Primary**: #1a1a2e
 - **Secondary**: #16213e
 - **Accent**: #0f3460
@@ -187,12 +201,14 @@ launcher.exitGame()
 - **Responsive design** with mobile support
 
 ### Game Modes
+
 - **Single Player** vs AI opponents
 - **Difficulty levels**: Easy, Normal, Hard
 - **Game speeds**: 1x, 2x, 4x
 - **Custom map selection**
 
 ### Progression System
+
 - **Territory conquest**
 - **Resource accumulation**
 - **Unit upgrades**
@@ -223,59 +239,65 @@ launcher.exitGame()
 ## 🎓 Integration Examples
 
 ### Create a Custom Game
+
 ```typescript
-import { initializeOfflineGame } from "./offline-game"
+import { initializeOfflineGame } from "./offline-game";
 
 const launcher = await initializeOfflineGame({
   mapSize: 8000,
   aiPlayers: 6,
   difficulty: "hard",
-  gameSpeed: 2
-})
+  gameSpeed: 2,
+});
 ```
 
 ### Access Game State
-```typescript
-const engine = launcher.getEngine()
-const gameState = engine.getGameState()
 
-console.log(gameState.players)      // All players
-console.log(gameState.territories)  // All territories
-console.log(gameState.units)        // All units
-console.log(gameState.structures)   // All structures
-console.log(gameState.currentTurn)  // Current turn
+```typescript
+const engine = launcher.getEngine();
+const gameState = engine.getGameState();
+
+console.log(gameState.players); // All players
+console.log(gameState.territories); // All territories
+console.log(gameState.units); // All units
+console.log(gameState.structures); // All structures
+console.log(gameState.currentTurn); // Current turn
 ```
 
 ### Listen to Events
+
 ```typescript
-const eventBus = engine.getEventBus()
+const eventBus = engine.getEventBus();
 
 eventBus.on(UnitAttackEvent, (event) => {
-  console.log("Unit attacked:", event)
-})
+  console.log("Unit attacked:", event);
+});
 
 eventBus.on(StructureDestroyedEvent, (event) => {
-  console.log("Structure destroyed:", event)
-})
+  console.log("Structure destroyed:", event);
+});
 ```
 
 ## 🔧 Customization
 
 ### Change Theme
+
 ```typescript
 gameUIManager.setTheme({
   primaryColor: "#2a2a4e",
-  accentColor: "#ff0055"
-})
+  accentColor: "#ff0055",
+});
 ```
 
 ### Add Custom Cosmetics
+
 ```typescript
 // Extend CosmeticsManager to add new cosmetics
-cosmeticsManager.unlockCosmetic("human", "custom_skin_id")
+cosmeticsManager.unlockCosmetic("human", "custom_skin_id");
 ```
 
 ### Create Custom Maps
+
 ```typescript
 // Add to AssetsManager
 const customMap = {
@@ -283,7 +305,7 @@ const customMap = {
   name: "My Custom Map",
   difficulty: "normal",
   // ... other properties
-}
+};
 ```
 
 ## 📱 Browser Support
@@ -327,6 +349,7 @@ To extend the offline game:
 ## 📞 Support
 
 For issues or questions:
+
 - Check the console for error messages
 - Review browser compatibility
 - Verify all assets are loaded

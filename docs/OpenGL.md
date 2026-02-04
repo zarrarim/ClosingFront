@@ -8,7 +8,7 @@ OpenFront now supports **OpenGL rendering** alongside the existing Canvas 2D ren
 ✅ **Advanced particle effects** (explosions, smoke, fire, impacts)  
 ✅ **Asset loading from all game resources**  
 ✅ **Hybrid rendering mode** (3D + 2D UI seamlessly blended)  
-✅ **No breaking changes** to existing code  
+✅ **No breaking changes** to existing code
 
 ## Architecture
 
@@ -49,6 +49,7 @@ OpenFront now supports **OpenGL rendering** alongside the existing Canvas 2D ren
 ### Integration Points
 
 The OpenGL system integrates into `GameRenderer` (existing):
+
 - Initializes automatically on game start
 - Runs in **HYBRID mode** by default
 - Listens to game events (`unit-attack`, `structure-destroyed`, `explosion`)
@@ -108,19 +109,25 @@ eventBus.emit("explosion", {
 ## Render Modes
 
 ### Canvas 2D
+
 Pure Canvas 2D rendering (fallback):
+
 ```typescript
 adapter.setRenderMode(RenderMode.CANVAS_2D);
 ```
 
 ### OpenGL
+
 Full OpenGL/WebGL rendering:
+
 ```typescript
 adapter.setRenderMode(RenderMode.OPENGL);
 ```
 
 ### Hybrid (Default)
+
 OpenGL for game world, Canvas 2D for UI:
+
 ```typescript
 adapter.setRenderMode(RenderMode.HYBRID);
 ```
@@ -162,10 +169,10 @@ Customize OpenGL rendering:
 
 ```typescript
 const config = {
-  antialiasing: true,      // Enable MSAA
-  shadowMap: true,         // Enable shadows
-  enableLights: true,      // Enable dynamic lights
-  targetFPS: 60,          // Target frame rate
+  antialiasing: true, // Enable MSAA
+  shadowMap: true, // Enable shadows
+  enableLights: true, // Enable dynamic lights
+  targetFPS: 60, // Target frame rate
 };
 
 // Pass to createOpenGLAdapter() or GameRenderer
@@ -177,7 +184,7 @@ const config = {
 ✅ Canvas 2D layers render on top  
 ✅ No modifications to existing file structures  
 ✅ Graceful fallback if WebGL unavailable  
-✅ Zero breaking changes  
+✅ Zero breaking changes
 
 ## Advanced Usage
 
@@ -212,16 +219,19 @@ system.update(deltaTime);
 ## Troubleshooting
 
 ### OpenGL not initializing
+
 - Check browser WebGL support: `WebGL 2.0 required`
 - Check console for specific errors
 - Falls back to Canvas 2D automatically
 
 ### Assets not loading
+
 - Verify files exist in `resources/` directory
 - Check browser Network tab for 404s
 - Assets load asynchronously - wait for `opengl-ready` event
 
 ### Performance issues
+
 - Reduce particle counts in `ParticleEmitterConfig`
 - Disable shadows: `shadowMap: false`
 - Use Canvas 2D mode for low-end devices

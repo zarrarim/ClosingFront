@@ -8,44 +8,50 @@ Vous avez une **version complète et fonctionnelle d'OpenFront** prête à jouer
 
 ## 📚 Documentation (Lisez dans cet ordre)
 
-### 1️⃣ **INSTALL.txt** ⚡ *Commencez ici!*
-   - 5 étapes simples pour démarrer
-   - Guide en texte brut (pas besoin de formater)
-   - Parfait pour les débutants
-   - **⏱️ 2 minutes de lecture**
+### 1️⃣ **INSTALL.txt** ⚡ _Commencez ici!_
 
-### 2️⃣ **QUICKSTART.md** 🚀 *Guide rapide*
-   - Instructions par étapes
-   - Troubleshooting courant
-   - Conseils de configuration
-   - **⏱️ 5 minutes de lecture**
+- 5 étapes simples pour démarrer
+- Guide en texte brut (pas besoin de formater)
+- Parfait pour les débutants
+- **⏱️ 2 minutes de lecture**
 
-### 3️⃣ **README.md** 📖 *Documentation complète*
-   - Fonctionnalités détaillées
-   - Architecture système
-   - Personnalisation
-   - Notes et prochaines étapes
-   - **⏱️ 10 minutes de lecture**
+### 2️⃣ **QUICKSTART.md** 🚀 _Guide rapide_
 
-### 4️⃣ **SUMMARY.md** 📊 *Résumé technique*
-   - Vue d'ensemble du code
-   - Statistiques (1,495 lignes)
-   - Architecture détaillée
-   - Scénarios de gameplay
-   - **⏱️ 15 minutes de lecture**
+- Instructions par étapes
+- Troubleshooting courant
+- Conseils de configuration
+- **⏱️ 5 minutes de lecture**
 
-### 5️⃣ **DEMO.md** 🎬 *Guide interactif*
-   - Timeline complète
-   - Diagrammes d'architecture
-   - Flows de données
-   - Exemple de partie
-   - **⏱️ 20 minutes de lecture**
+### 3️⃣ **README.md** 📖 _Documentation complète_
+
+- Fonctionnalités détaillées
+- Architecture système
+- Personnalisation
+- Notes et prochaines étapes
+- **⏱️ 10 minutes de lecture**
+
+### 4️⃣ **SUMMARY.md** 📊 _Résumé technique_
+
+- Vue d'ensemble du code
+- Statistiques (1,495 lignes)
+- Architecture détaillée
+- Scénarios de gameplay
+- **⏱️ 15 minutes de lecture**
+
+### 5️⃣ **DEMO.md** 🎬 _Guide interactif_
+
+- Timeline complète
+- Diagrammes d'architecture
+- Flows de données
+- Exemple de partie
+- **⏱️ 20 minutes de lecture**
 
 ---
 
 ## 🎯 Par Où Commencer?
 
 ### Si tu veux **juste jouer** 🎮
+
 ```
 1. Lis INSTALL.txt (2 min)
 2. npm install
@@ -54,6 +60,7 @@ Vous avez une **version complète et fonctionnelle d'OpenFront** prête à jouer
 ```
 
 ### Si tu veux **comprendre le code** 💻
+
 ```
 1. Lis README.md (10 min)
 2. Lis SUMMARY.md (15 min)
@@ -62,6 +69,7 @@ Vous avez une **version complète et fonctionnelle d'OpenFront** prête à jouer
 ```
 
 ### Si tu veux **modifier/personnaliser** 🛠️
+
 ```
 1. Lis QUICKSTART.md (5 min)
 2. Lis section "Configuration" du README
@@ -70,6 +78,7 @@ Vous avez une **version complète et fonctionnelle d'OpenFront** prête à jouer
 ```
 
 ### Si tu veux **tout savoir en détail** 📚
+
 ```
 1. Lis DEMO.md (tout)
 2. Lis SUMMARY.md (tout)
@@ -130,16 +139,19 @@ npm start
 ## 🎮 Gameplay
 
 ### Créer une Partie
+
 1. Entrez votre nom
 2. Cliquez "Créer une Partie"
 3. Partagez le **code** avec vos amis
 
 ### Rejoindre une Partie
+
 1. Entrez votre nom
 2. Cliquez "Rejoindre une Partie"
 3. Entrez le **code** du créateur
 
 ### Jouer
+
 - **Cliquez** un territoire pour le sélectionner
 - **Attaquez** les territoires adjacents
 - **Capturez** les territoires libres
@@ -150,17 +162,17 @@ npm start
 
 ## 📊 Statistiques du Projet
 
-| Métrique | Valeur |
-|----------|--------|
-| **Lignes de code** | 1,495 |
-| **Fichiers source** | 4 (js + html + css) |
-| **Dépendances npm** | 3 (express, ws, uuid) |
-| **Temps de démarrage** | < 2s |
-| **Joueurs par partie** | 1-10 |
-| **Territoires** | 20x20 = 400 |
-| **Authentification** | ✅ Aucune (mode anonyme) |
-| **Base de données** | ✅ En mémoire (pas persistant) |
-| **Licence** | AGPL-3.0 |
+| Métrique               | Valeur                         |
+| ---------------------- | ------------------------------ |
+| **Lignes de code**     | 1,495                          |
+| **Fichiers source**    | 4 (js + html + css)            |
+| **Dépendances npm**    | 3 (express, ws, uuid)          |
+| **Temps de démarrage** | < 2s                           |
+| **Joueurs par partie** | 1-10                           |
+| **Territoires**        | 20x20 = 400                    |
+| **Authentification**   | ✅ Aucune (mode anonyme)       |
+| **Base de données**    | ✅ En mémoire (pas persistant) |
+| **Licence**            | AGPL-3.0                       |
 
 ---
 
@@ -188,20 +200,26 @@ npm --version
 ## 🎨 Personnalisation Rapide
 
 ### Changer les couleurs
+
 Modifiez `public/styles.css`:
+
 ```css
 /* Remplacez #00d4ff par votre couleur */
 background: linear-gradient(135deg, #YOUR_COLOR, #OTHER_COLOR);
 ```
 
 ### Changer la taille de la grille
+
 Modifiez `server.js` ligne ~25:
+
 ```javascript
 const gridSize = 20; // Changez le nombre (ex: 30)
 ```
 
 ### Changer le nombre de joueurs max
+
 Modifiez `server.js` ligne ~80:
+
 ```javascript
 if (game.players.size >= 10) { // Changez 10 par votre nombre
 ```
@@ -210,30 +228,33 @@ if (game.players.size >= 10) { // Changez 10 par votre nombre
 
 ## 🆘 Dépannage
 
-| Problème | Solution |
-|----------|----------|
-| Port 3000 occupé | `PORT=8080 npm start` |
-| "Module not found" | `npm install` |
-| WebSocket erreur | Rechargez F5, redémarrez serveur |
-| Jeu très lent | Réduisez gridSize à 15 ou moins |
-| Connexion refusée | Vérifiez `http://localhost:3000` |
+| Problème           | Solution                         |
+| ------------------ | -------------------------------- |
+| Port 3000 occupé   | `PORT=8080 npm start`            |
+| "Module not found" | `npm install`                    |
+| WebSocket erreur   | Rechargez F5, redémarrez serveur |
+| Jeu très lent      | Réduisez gridSize à 15 ou moins  |
+| Connexion refusée  | Vérifiez `http://localhost:3000` |
 
 ---
 
 ## 📖 Pour Aller Plus Loin
 
 ### Lectures Recommandées
+
 1. **QUICKSTART.md** - Pour apprendre les commandes
 2. **README.md** - Pour le contexte complet
 3. **SUMMARY.md** - Pour l'architecture détaillée
 4. **DEMO.md** - Pour les diagrammes et exemples
 
 ### Explorer le Code
+
 - **server.js** - Logique serveur + WebSocket
 - **game.js** - Logique client + Canvas
 - **styles.css** - Design et animations
 
 ### Modifier et Tester
+
 ```bash
 # Mode développement (auto-reload)
 npm run dev
@@ -259,18 +280,21 @@ npm run dev
 ## 🎯 Prochaines Étapes
 
 ### Après avoir joué
+
 - [ ] Lire la documentation complète
 - [ ] Essayer de modifier les couleurs
 - [ ] Augmenter la taille de la grille
 - [ ] Jouer avec plusieurs amis
 
 ### Pour les développeurs
+
 - [ ] Parcourir le code du serveur
 - [ ] Parcourir le code du client
 - [ ] Modifier la logique de combat
 - [ ] Ajouter de nouvelles features
 
 ### Pour les ambitieux
+
 - [ ] Ajouter une BDD (SQLite)
 - [ ] Ajouter un chat
 - [ ] Implémenter des alliances
@@ -303,6 +327,7 @@ Vous avez une **version OpenFront complète** avec:
 ✅ Prêt à jouer!
 
 **Commencez maintenant:**
+
 ```bash
 cd standalone && npm install && npm start
 ```
@@ -316,4 +341,3 @@ Puis allez sur: **http://localhost:3000**
 Created: Feb 3, 2026
 Version: 1.0.0
 License: AGPL-3.0
-

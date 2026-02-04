@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -69,8 +69,12 @@
       }
 
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
       .loading-bar {
@@ -157,7 +161,9 @@
         <div class="loading-bar">
           <div id="loading-progress" class="loading-progress"></div>
         </div>
-        <div class="loading-text" id="loading-text">Initializing Offline Game...</div>
+        <div class="loading-text" id="loading-text">
+          Initializing Offline Game...
+        </div>
       </div>
     </div>
 
@@ -166,7 +172,7 @@
       <div class="error-content">
         <h2>⚠️ Game Error</h2>
         <p id="error-message">An error occurred while loading the game.</p>
-        <button onclick="location.href='/'">Return to Home</button>
+        <button onclick="location.href = '/'">Return to Home</button>
       </div>
     </div>
 
@@ -177,7 +183,7 @@
       window.addEventListener("load", async () => {
         try {
           console.log("Starting offline game...");
-          
+
           // Initialize with default config
           const launcher = await initializeOfflineGame({
             mapSize: 10000,
@@ -220,10 +226,10 @@
           }, 1000);
         } catch (error) {
           console.error("Failed to initialize game:", error);
-          
+
           const errorScreen = document.getElementById("error-screen");
           const errorMessage = document.getElementById("error-message");
-          
+
           if (errorScreen && errorMessage) {
             errorMessage.textContent = `${error instanceof Error ? error.message : "Unknown error"}`;
             errorScreen.style.display = "flex";
