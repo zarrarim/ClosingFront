@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenFront - Jeu de Stratégie</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Écran de connexion -->
+      <div id="loginScreen" class="screen active">
+        <div class="login-container">
+          <h1>🎮 OpenFront</h1>
+          <p class="subtitle">Jeu de Stratégie Temps Réel</p>
+
+          <div class="login-form">
+            <input type="text" id="playerNameInput" placeholder="Votre nom" class="input-field" />
+
+            <div class="button-group">
+              <button id="createGameBtn" class="btn btn-primary">Créer une Partie</button>
+              <button id="joinGameBtn" class="btn btn-secondary">Rejoindre une Partie</button>
+            </div>
+
+            <div id="joinGameForm" class="hidden">
+              <input type="text" id="gameCodeInput" placeholder="Code de la partie" class="input-field" />
+              <button id="confirmJoinBtn" class="btn btn-primary">Rejoindre</button>
+              <button id="cancelJoinBtn" class="btn btn-cancel">Annuler</button>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p><strong>⚡ Créez une partie</strong> ou rejoignez une existante avec un code</p>
+            <p><strong>📊 Stratégie:</strong> Capturez des territoires et formez des alliances</p>
+            <p><strong>🏆 Objectif:</strong> Dominez la carte!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Écran d'attente (lobby) -->
+      <div id="lobbyScreen" class="screen">
+        <div class="lobby-container">
+          <div class="lobby-header">
+            <div>
+              <h2>En Attente de Joueurs</h2>
+              <p id="gameCodeDisplay" class="game-code"></p>
+            </div>
+            <div class="player-count" id="playerCount">Joueurs: 0/10</div>
+          </div>
+
+          <div class="players-list">
+            <h3>Joueurs Connectés:</h3>
+            <div id="playersList" class="players-grid"></div>
+          </div>
+
+          <div class="lobby-actions">
+            <button id="startGameBtn" class="btn btn-primary" disabled>Démarrer la Partie</button>
+            <button id="leaveLobbyBtn" class="btn btn-cancel">Quitter</button>
+          </div>
+
+          <div class="info-box">
+            <p>Attendez que d'autres joueurs rejoignent... (Minimum 1 joueur)</p>
+            <p>Le créateur de la partie peut la démarrer dès qu'il y a au moins 1 joueur.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Écran de jeu -->
+      <div id="gameScreen" class="screen">
+        <div class="game-container">
+          <!-- Barre supérieure -->
+          <div class="game-header">
+            <div class="header-left">
+              <h2>OpenFront</h2>
+              <div class="player-info">
+                <span id="playerNameDisplay"></span>
+                <span id="playerStatsDisplay"></span>
+              </div>
+            </div>
+
+            <div class="header-right">
+              <div class="game-stats">
+                <div class="stat">
+                  <span class="stat-label">Territoires:</span>
+                  <span id="territoriesCount">0</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Unités:</span>
+                  <span id="unitsCount">0</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Niveau:</span>
+                  <span id="levelCount">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone de jeu principale -->
+          <div class="game-main">
+            <!-- Carte -->
+            <div class="game-map-wrapper">
+              <canvas id="gameCanvas" class="game-canvas"></canvas>
+              <div id="selectedTerritoryInfo" class="territory-info hidden">
+                <div class="territory-details">
+                  <p id="territoryOwner"></p>
+                  <p id="territoryUnits"></p>
+                  <div id="territoryActions"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panneau latéral -->
+            <div class="game-sidebar">
+              <div class="sidebar-section">
+                <h3>⚔️ Contrôles</h3>
+                <p class="text-small">Cliquez sur un territoire pour le sélectionner</p>
+              </div>
+
+              <div class="sidebar-section">
+                <h3>👥 Classement</h3>
+                <div id="leaderboard" class="leaderboard"></div>
+              </div>
+
+              <div class="sidebar-section">
+                <h3>ℹ️ Info</h3>
+                <p class="text-small">Générez des unités automatiquement. Attaquez les territoires adjacents.</p>
+              </div>
+
+              <button id="quitGameBtn" class="btn btn-cancel full-width">Quitter le Jeu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

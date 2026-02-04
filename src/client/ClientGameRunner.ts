@@ -49,6 +49,7 @@ import {
 import { createCanvas } from "./Utils";
 import { createRenderer, GameRenderer } from "./graphics/GameRenderer";
 import { GoToPlayerEvent } from "./graphics/layers/Leaderboard";
+import { setupTestConsole } from "./graphics/opengl/OpenGLTestUtils";
 import SoundManager from "./sound/SoundManager";
 
 export interface LobbyConfig {
@@ -346,6 +347,12 @@ export class ClientGameRunner {
 
     this.renderer.initialize();
     this.input.initialize();
+
+    // Initialize OpenGL test utilities for development/debugging
+    if (process.env.GAME_ENV === "dev" || (window as any).ENABLE_OPENGL_TESTS) {
+      setupTestConsole(this.renderer, this.eventBus);
+    }
+
     this.worker.start((gu: GameUpdateViewData | ErrorUpdate) => {
       if (this.lobby.gameStartInfo === undefined) {
         throw new Error("missing gameStartInfo");

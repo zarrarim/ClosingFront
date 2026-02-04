@@ -1,0 +1,94 @@
+═══════════════════════════════════════════════════════════════════════════════
+  🎮 OPENFRONT STANDALONE - GUIDE D'INSTALLATION
+═══════════════════════════════════════════════════════════════════════════════
+
+ÉTAPE 1: Pré-requis
+───────────────────
+✓ Node.js 16+ (https://nodejs.org)
+✓ npm (livré avec Node.js)
+✓ Un navigateur web moderne
+
+Vérifiez:
+  node --version
+  npm --version
+
+
+ÉTAPE 2: Installation (une seule fois)
+──────────────────────────────────────
+  cd standalone
+  npm install
+
+
+ÉTAPE 3: Lancer le serveur
+──────────────────────────
+  npm start
+
+Vous verrez:
+  🎮 OpenFront Server running on http://localhost:3000
+  📡 WebSocket server ready
+
+
+ÉTAPE 4: Accéder au jeu
+──────────────────────
+Ouvrez votre navigateur:
+  http://localhost:3000
+
+
+ÉTAPE 5: Jouer
+──────────────
+1. Entrez votre nom
+2. Créez une partie (et partagez le code)
+   OU rejoignez une partie avec un code
+3. Attendez les autres joueurs
+4. Le créateur démarre la partie
+5. Dominez la carte! 🏆
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FICHIERS INCLUS:
+
+server.js              - Serveur Express + WebSocket
+public/
+  ├─ index.html       - Interface du jeu
+  ├─ styles.css       - Design (bleu/cyan)
+  ├─ game.js          - Logique client
+README.md             - Documentation complète
+QUICKSTART.md         - Guide rapide
+package.json          - Dépendances (express, ws, uuid)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CARACTÉRISTIQUES:
+
+✅ Multiplayer temps réel (WebSocket)
+✅ Grille de 20x20 territoires
+✅ Jusqu'à 10 joueurs par partie
+✅ Système de ressources automatique
+✅ Attaques et captures
+✅ Classement en direct
+✅ Interface responsive
+✅ GRATUIT et sans compte!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DÉPANNAGE:
+
+Port 3000 occupé?
+  PORT=8080 npm start
+
+Node.js pas trouvé?
+  Installez depuis https://nodejs.org
+
+Erreur WebSocket?
+  - Rechargez la page (F5)
+  - Redémarrez le serveur
+  - Vérifiez le port
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Besoin d'aide? Lisez README.md ou QUICKSTART.md
+
+Bon jeu! 🚀⚡

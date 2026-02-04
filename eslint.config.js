@@ -13,7 +13,22 @@ const gitignorePath = path.resolve(__dirname, ".gitignore");
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   includeIgnoreFile(gitignorePath),
-  { ignores: ["src/server/gatekeeper/**", "tests/pathfinding/playground/**"] },
+  {
+    ignores: [
+      "src/server/gatekeeper/**",
+      "tests/pathfinding/playground/**",
+      "app.js",
+      "server-fullbuild.js",
+      "server-fullbuild.mjs",
+      "fullbuild/server.js",
+      "standalone/server.js",
+      "standalone/public/game.js",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "static/**",
+    ],
+  },
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,

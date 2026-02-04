@@ -44,6 +44,11 @@ import { UILayer } from "./layers/UILayer";
 import { UnitDisplay } from "./layers/UnitDisplay";
 import { UnitLayer } from "./layers/UnitLayer";
 import { WinModal } from "./layers/WinModal";
+import {
+  createOpenGLAdapter,
+  OpenGLRendererAdapter,
+  RenderMode,
+} from "./opengl/index";
 
 export function createRenderer(
   canvas: HTMLCanvasElement,
@@ -322,6 +327,8 @@ export function createRenderer(
 export class GameRenderer {
   private context: CanvasRenderingContext2D;
   private layerTickState = new Map<Layer, { lastTickAtMs: number }>();
+  private openglAdapter: OpenGLRendererAdapter | null = null;
+  private isOpenGLInitializing: boolean = false;
 
   constructor(
     private game: GameView,
@@ -352,6 +359,9 @@ export class GameRenderer {
     //show whole map on startup
     this.transformHandler.centerAll(0.9);
 
+    // Initialize OpenGL in hybrid mode for enhanced rendering
+    this.initializeOpenGL();
+
     let rafId = requestAnimationFrame(() => this.renderGame());
     this.canvas.addEventListener("contextlost", () => {
       cancelAnimationFrame(rafId);
@@ -360,6 +370,34 @@ export class GameRenderer {
       this.redraw();
       rafId = requestAnimationFrame(() => this.renderGame());
     });
+  }
+
+  private async initializeOpenGL(): Promise<void> {
+    if (this.isOpenGLInitializing || this.openglAdapter) return;
+
+    try {
+      this.isOpenGLInitializing = true;
+
+      this.openglAdapter = createOpenGLAdapter(
+        this.canvas,
+        this.game,
+        this.eventBus,
+        this.transformHandler,
+        this.uiState,
+      );
+
+      await this.openglAdapter.initialize();
+      this.openglAdapter.setRenderMode(RenderMode.HYBRID);
+
+      console.log("✨ OpenGL renderer initialized in HYBRID mode");
+    } catch (error) {
+      console.warn(
+        "Failed to initialize OpenGL, falling back to Canvas 2D:",
+        error,
+      );
+    } finally {
+      this.isOpenGLInitializing = false;
+    }
   }
 
   resizeCanvas() {
@@ -460,5 +498,25 @@ export class GameRenderer {
   resize(width: number, height: number): void {
     this.canvas.width = Math.ceil(width / window.devicePixelRatio);
     this.canvas.height = Math.ceil(height / window.devicePixelRatio);
+  }
+
+  /**
+   * Get OpenGL adapter for advanced operations
+   */
+  getOpenGLAdapter(): OpenGLRendererAdapter | null {
+    return this.openglAdapter;
+  }
+
+  /**
+   * Create particle effect at position (uses OpenGL if available)
+   */
+  createParticleEffect(
+    effectType: string,
+    position: { x: number; y: number },
+    intensity?: number,
+  ): void {
+    if (this.openglAdapter?.isOpenGLAvailable()) {
+      this.openglAdapter.createParticleEffect(effectType, position, intensity);
+    }
   }
 }

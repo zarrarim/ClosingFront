@@ -82,6 +82,7 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             vendor: ["pixi.js", "howler", "zod", "protobufjs"],
+            opengl: ["three"],
           },
         },
       },

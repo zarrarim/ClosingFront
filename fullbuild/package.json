@@ -1,0 +1,29 @@
+{
+  "name": "openfront-fullbuild",
+  "version": "1.0.0",
+  "description": "OpenFront - Build complet bundlé",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "install-deps": "cd .. && npm ci --ignore-scripts",
+    "build": "cd .. && npm run build-prod",
+    "build-dev": "cd .. && npm run build-dev",
+    "prebuild": "npm run install-deps",
+    "start": "node server.js",
+    "dev": "npm run build-dev && node --watch server.js"
+  },
+  "keywords": ["game", "openfront", "strategy"],
+  "author": "OpenFront Contributors",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.23",
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.11",
+    "typescript": "^5.7.2"
+  }
+}
