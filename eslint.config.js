@@ -23,6 +23,8 @@ export default [
       "fullbuild/server.js",
       "standalone/server.js",
       "standalone/public/game.js",
+      "scripts/split-merge.js",
+      "scripts/large-file-loader.js",
       "node_modules/**",
       "dist/**",
       "build/**",
