@@ -6,7 +6,7 @@
   </picture>
 </p>
 
-[OpenFront.io](https://openfront.io/) is an online real-time strategy game focused on territorial control and alliance building. Players compete to expand their territory, build structures, and form strategic alliances in various maps based on real-world geography.
+[zarrarim.github.io](https://zarrarim.github.io/) is an online real-time strategy game focused on territorial control and alliance building. Players compete to expand their territory, build structures, and form strategic alliances in various maps based on real-world geography.
 
 This is a fork/rewrite of WarFront.io. Credit to https://github.com/WarFrontIO.
 
